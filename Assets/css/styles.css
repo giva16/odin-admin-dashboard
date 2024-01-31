@@ -270,6 +270,8 @@ div.content-container {
   background-color: var(--container-bg-color);
   padding: 20px 30px;
   border-radius: 10px;
+
+  box-shadow: var(--container-shadow);
 }
 
 span.content-title {
@@ -293,4 +295,30 @@ span.announcement-title {
 .announcement:first-of-type {
   border: none;
   padding-top: 0px;
+}
+
+.trend {
+  display: flex;
+
+  align-items: center;
+  gap: 30px;
+}
+
+.trend span {
+  display: block;
+}
+
+.trend span:last-of-type {
+  margin-top: 5px;
+}
+
+span.username {
+  font-weight: 800;
+}
+
+.trend .profile-pic {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 100%;
 }

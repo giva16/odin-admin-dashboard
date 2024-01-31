@@ -155,7 +155,8 @@ header {
   padding: 10px 30px;
 }
 
-header svg {
+header svg,
+.project svg {
   stroke: black;
   fill: black;
 }
@@ -225,6 +226,7 @@ span.greet-text {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap:30px;
+
 }
 
 div.content-container {
@@ -236,20 +238,45 @@ div.content-container {
 
 #project-container {
   display: grid;
-  align-items: start;
+  align-items: stretch;
 
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
 }
 
 .project {
-  border: 1px solid red;
+  display: grid;
+  grid-row: 1fr 3fr 1fr;
+  gap: 15px;
+
+  font-size: 1rem;
 
   padding: 20px;
   border-left: solid 10px indianred;
   border-radius: 10px;
   background-color: var(--container-bg-color);
   box-shadow: var(--container-shadow);
+
+}
+
+.project-actions {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+  gap: 20px;
+}
+
+.project-actions a {
+  text-decoration: none;
+}
+
+.project-actions svg {
+  height: 2rem;
+}
+
+span.content-title.project-title {
+  font-size: 1.2rem;
 }
 
 #side-content {

@@ -18,14 +18,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-html, 
-body{
-  height: 100vh;
-  width: 100vw;
-}
 
 body {
-  overflow: hidden;
+  height: 100vh;
+
+  overflow: auto;
   font-family: Roboto, 'Times New Roman', Times, serif;
   display: grid;
 
@@ -36,15 +33,11 @@ body {
 }
 
 
-#dashboard {
-  overflow: auto;
-}
-
 /********* IMMEDIATE BODY CHILD CONTAINERS' LAYOUT **************/
 .sidebar {
   height: 100%;
   grid-row: 1 / 3;
-
+  
   background-color: var(--sidebar-btn-bg-color);
   color: var(--sidebar-btn-text-color);
   font-weight: 700;
@@ -68,9 +61,12 @@ header {
 
 .sidebar-links-container {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr fr;
 
   row-gap: 60px;
+
+  position: fixed;
+  top: 150px;
 }
 
 .sidebar-links-container  .link {
@@ -93,7 +89,7 @@ header {
 }
 
 .logo {
-  position: relative;
+  position: fixed;
   font-size: 2rem;
 }
 
@@ -128,6 +124,9 @@ header {
   box-shadow: var(--container-shadow);
 
   padding: var(--padding-vertical) 30px 0px;
+
+  position: sticky;
+  top: -82px;
 }
 
 .searchbar-container {
@@ -214,4 +213,84 @@ span.greet-text {
 .header-action:hover {
   cursor: pointer;
   border-color: #7dd3fc;
+}
+
+/****** DASHBOARD ********/
+
+.dashboard {
+  padding: 30px;
+  padding-bottom: 0;
+
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap:30px;
+}
+
+div.content-container {
+  display: grid;
+  align-items: center;
+  align-items: start;
+  grid-template-rows: 40px 1fr;
+}
+
+#project-container {
+  display: grid;
+  align-items: start;
+
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project {
+  border: 1px solid red;
+
+  padding: 20px;
+  border-left: solid 10px indianred;
+  border-radius: 10px;
+  background-color: var(--container-bg-color);
+  box-shadow: var(--container-shadow);
+}
+
+#side-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: start;
+  gap: 30px;
+
+  max-height: 100vh;
+}
+
+#announcement-container,
+#trend-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  background-color: var(--container-bg-color);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+span.content-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.announcement {
+  border-top: 2px solid #999;
+  padding-top: 15px;
+}
+
+.announcement > p {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+span.announcement-title {
+  font-size: 1.2rem;
+}
+.announcement:first-of-type {
+  border: none;
+  padding-top: 0px;
 }

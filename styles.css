@@ -10,6 +10,7 @@
 
   --container-shadow: 0px 1px 10px #999;
   --padding-vertical: 30px;
+  --button-border: 2px solid transparent;
   
 }
 
@@ -201,7 +202,7 @@ span.greet-text {
 
 .header-action {
   background-color: var(--sidebar-btn-bg-color);
-  border: 2px solid transparent;
+  border: var(--button-border);
   
   padding: 10px 30px;
   border-radius: 30px;
@@ -211,9 +212,9 @@ span.greet-text {
   font-weight: 700;
 }
 
-.header-action:hover {
-  cursor: pointer;
-  border-color: #7dd3fc;
+button:hover {
+  cursor: pointer !important;
+  border-color: #7dd3fc !important;
 }
 
 /****** DASHBOARD ********/
@@ -348,4 +349,82 @@ span.username {
   height: 50px;
 
   border-radius: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s ease-in-out;
+  padding: 20px;
+  background-color: var(--body-bg-color);
+  z-index: 2;
+  width: 300px;
+}
+
+.modal.active {
+  transform: translate(50%, -50%) scale(1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/****** Add Project Form ********/
+#addProjectModal {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  width: 500px;
+}
+
+#addProjectModal form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#addProjectModal input,
+#addProjectModal textarea {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#addProjectModal p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#addProjectModal button {
+  width: 50%;
+  align-self: center;
+  border: var(--button-border);
+  padding: 10px 30px;
+  border-radius: 30px;
+  color: var(--sidebar-btn-text-color);
+  background-color: var(--sidebar-btn-bg-color);
 }

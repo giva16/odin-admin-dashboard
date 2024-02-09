@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Assets/css/styles.css">
+  <link rel="stylesheet" href="./styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
@@ -51,6 +51,48 @@
         <button class="header-action" id="addBtn">Add New Project</button>
       </div>
     </header>
+    <div id="overlay" class="overlay"></div>
+    <div id="addProjectModal" class="modal">
+      <form id="addProject">
+        <div class="form-control">
+          <p>Project name</p>
+          <input type="text" 
+                 name="project_name" 
+                 id="projectName"
+                 required
+          />
+        </div>
+
+        <div class="form-control">
+          <p>Description <span>(optional)</span></p>
+          <textarea name="project_description" 
+                    id="project-description"  
+                    rows="5"></textarea>
+        </div>
+
+        <div class="form-control">
+          <p>Code link</p>
+          <input type="url" 
+                 name="project_code" 
+                 id="projectName"
+                 required
+          />
+        </div>
+  
+        <div class="form-control">
+          <p>Live web page link</p>
+          <input type="url" 
+                 name="project_page" 
+                 id="projectName"
+          />
+        </div>
+  
+        <div class="form-control">
+          <button type="submit">Add Project</button>
+        </div>
+
+      </form>
+    </div>
     <section class="dashboard">
       <div class="content-container" id="projects">
 
@@ -157,5 +199,6 @@
       </div>
     </section>
   </main>
+  <script src="./script.js"></script>
 </body>
 </html>
